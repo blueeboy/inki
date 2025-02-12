@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Inconsolata", serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #141414;
+    --tertiary-color: rgba(255, 140, 0, 0.9);
+}
+
+.container {
+    width: 100%;
+}
+
+.container-1 {
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+nav {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav a.logo{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: "Rubik Glitch", serif;
+    font-size: 40px;
+    padding-left: 1em;
+    font-weight: 100;
+}
+
+nav a.logo:hover {
+    color: var(--primary-color);
+}
+
+nav a#menu-btn {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 33px;
+  font-family: "Poppins", serif;
+}
+
+nav a {
+    color: var(--primary-color);    
+    width: 100%;
+    padding: 0.2em 0;
+    border: 1px solid var(--primary-color);
+}
+
+nav a:hover {
+    color: var(--tertiary-color);
+    transition: all 0.1s ease;
+}
+.container-1-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 9em 2em 12em 2em;
+    width: 100%;
+}
+
+.container-1-body .text h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: var(--primary-color);
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
+
+
+.video {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: spac;
+    gap: 2em;
+    cursor: pointer;
+}
+
+.video iframe {
+  object-fit: cover;
+  background-position: top;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+video {
+    object-fit: cover;
+    background-position: top;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+}
+
+.text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.text .circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--tertiary-color);
+  border-radius: 50%;
+}
+
+.text p{
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+footer {
+  height: 40vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--primary-color);
+  
+}
+
+footer .socials {
+  display: flex;
+  gap: 3em;
+}
+
+footer .socials a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+footer .socials a:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+footer .logo a{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Rubik Glitch", serif;
+  font-size: 70px;
+  font-weight: 100;
+}
+
+.section {
+  height: 100vh;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  overflow-y: hidden;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  overflow-y: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu {
+    display: none;
+    overflow: hidden;
+}
+
+.menu-links{
+  list-style-type: none;
+  width: 100%;
+}
+
+.menu-links .first,
+.menu-links .second {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-links a {
+  text-decoration: none;
+  width: 100%;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  line-height: 1;
+  font-family: "Poppins", serif;
+  font-size: 120px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+  color: transparent;
+  -webkit-text-stroke: 2px white; 
+}
+
+.menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.menu-socials a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.menu-socials a:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.show {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  
+}
+
+.hide {
+  display: none;
+}
+
+.hide-scroll {
+  overflow: hidden;
+}
+
+.hide-body {
+    display: none;
+}
+
+
+
