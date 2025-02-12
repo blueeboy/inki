@@ -29,6 +29,15 @@ const soSweetAudio = document.querySelector(".so-sweet-audio")
 // })
 
 
+function toggleTellMe() {
+    if (jealousAudio.paused) {
+        loveAudio.pause();
+        soSweetAudio.pause();
+        jealousAudio.play();
+    } else {
+        jealousAudio.pause();
+    }
+}
 function toggleJealous() {
     if (jealousAudio.paused) {
         loveAudio.pause();
