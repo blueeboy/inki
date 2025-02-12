@@ -624,4 +624,15 @@ footer .logo a{
   opacity: 1;
   transform: translateY(0);
 }
+    .menu-links a {
+  font-size: 50px;
+}
+
+.menu-socials {
+  gap: 1em;
+}
+
+.menu-socials a {
+  font-size: 1em;
+}
 } 
