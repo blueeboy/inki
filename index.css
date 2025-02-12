@@ -56,8 +56,9 @@ nav a#menu-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 33px;
+  font-size: 25px;
   font-family: "Poppins", serif;
+  padding: 0.5em 2em;
 }
 
 nav a {
@@ -433,10 +434,11 @@ nav a:hover {
 
 
 
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
 
   nav {
     grid-template-columns: 85% 15%;
+    color: red;
 }
 
   nav a#menu-btn {
@@ -503,4 +505,123 @@ nav a:hover {
   .container-4 > div h1 {
     font-size: 22px;
   }
-} */
+}
+
+
+
+@media (max-width: 640px) {
+  nav {
+    grid-template-columns: 80% 20%;
+}
+
+nav a#menu-btn {
+  font-size: 25px;
+  padding: 0.5em 0;
+}
+
+.carousel-content h1 {
+  font-size: 4em;
+}
+
+.container-2 p {
+  font-size: 2em;
+}
+
+.container-2 h1 {
+  font-size: 6em;
+}
+
+.container-3 {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1em;
+}
+
+
+.container-3 > div{
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3em;
+}
+
+.container-3 p{
+  color: var(--primary-color);
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.container-3 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.container-3 video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.container-4 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+  padding: 0em 1em 0em 1em;
+  overflow: hidden;
+}
+
+.container-4 > div h1 {
+  font-size: 16px;
+}
+
+footer {
+  height: 40vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--primary-color);
+  
+}
+
+footer .socials {
+  display: flex;
+  gap: 1em;
+}
+
+footer .socials a {
+  font-size: 1em;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+footer .socials a:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+footer .logo a{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Rubik Glitch", serif;
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.section {
+  height: 120vh;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+} 
