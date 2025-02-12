@@ -505,6 +505,16 @@ footer .logo a{
 
 .menu-links a {
   font-size: 50px;
+  text-align: start;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1em;
+}
+
+.menu-links .first,
+.menu-links .second {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .menu-socials {
