@@ -39,10 +39,10 @@
                 </div>
         
                 <div class="menu-socials">
-                    <a href="http://www.youtube.com/@inki4real">YOUTUBE</a>
-                    <a href="https://www.instagram.com/i.n.ki?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">INSTAGRAM</a>
-                    <a href="https://www.tiktok.com/@inki.arr?is_from_webapp=1&sender_device=pc">TIKTOK</a>
-                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fon.soundcloud.com%2FwGky3q4dhJtekGAx7%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaYVYXAbmQ5bOUl0N6f3RW-nHShSkQ7LM9KWODdgCZOIlxNb6cxB6gBkHJ0_aem_UG351BzmDVeEmhzgDvOYmQ&e=AT0iDpd4UwkdB5j8Lsq18Vr3iJC2OfRM3JDUS3c5yx1VzuJeruS8hL_HCnTIKrF27YLidijFAmteZtNkxaj8Jw3q6ftMiVUOfT-JjzQ">SOUNDCLOUD</a>     
+                    <a href="http://www.youtube.com/@inki4real" target="_blank">YOUTUBE</a>
+                    <a href="https://www.instagram.com/i.n.ki?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">INSTAGRAM</a>
+                    <a href="https://www.tiktok.com/@inki.arr?is_from_webapp=1&sender_device=pc" target="_blank">TIKTOK</a>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fon.soundcloud.com%2FwGky3q4dhJtekGAx7%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaYVYXAbmQ5bOUl0N6f3RW-nHShSkQ7LM9KWODdgCZOIlxNb6cxB6gBkHJ0_aem_UG351BzmDVeEmhzgDvOYmQ&e=AT0iDpd4UwkdB5j8Lsq18Vr3iJC2OfRM3JDUS3c5yx1VzuJeruS8hL_HCnTIKrF27YLidijFAmteZtNkxaj8Jw3q6ftMiVUOfT-JjzQ" target="_blank">SOUNDCLOUD</a>     
                 </div>
                 
             </div>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="audio">
-                    <div>
+                    <div class="non-sect">
                         <div class="my-fault" >
                             <img src="image.png" alt="" style="filter: grayscale(1);">
                             
@@ -72,7 +72,7 @@
                     </div>
 
 
-                  <div>
+                  <div class="non-sect">
                     <div class="miss-u" >
                         <img src="022b1c67ee9e486a80cceea691598edd.jpg" alt="" style="filter: grayscale(1);">
 
@@ -91,7 +91,7 @@
                   </div>
                     
 
-                  <div>
+                  <div class="non-sect">
                     <div class="wyss" >
                         <img src="2 -eventually(1).jpg" alt="" style="filter: grayscale(1);">
 
@@ -111,15 +111,20 @@
                     
 
                   <div class="section">
-                    <div class="tell-me" >
+                    <div class="tell-me audio-player">
                         <img src="IMG-20230807-WA0019.jpg" alt="">
-                        <audio class="jealous-audio">
+                        <audio>
                             <source src="tell me.m4a" type="audio/mpeg">
                         </audio>
                         
                         <div class="overlay">
                           <h1>tell me</h1>
-                          <p onclick="toggleTellMe()">PLAY NOW</p>
+                          <p href="#" onclick="toggleTellMe()" id="playPauseBtn">PLAY NOW</p>
+                          <span id="timeDisplay">0:00</span>
+                          <div class="progress-container" id="progressContainer">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        
                         </div>
                     </div>
                     <div class="text">
@@ -132,16 +137,21 @@
                   </div>
 
                   <div class="section">
-                    <div class="jealous" >
+                    <div class="jealous audio-player" >
                         <img src="530106b92eb54b71b6077a5f8f208afa.jpg" alt="">
                        
-                        <audio class="jealous-audio">
+                        <audio>
                             <source src="jealous.m4a" type="audio/mpeg">
                         </audio>
                         
                         <div class="overlay">
                           <h1>jealous</h1>
-                          <p onclick="toggleJealous()">PLAY NOW</p>
+                          <p href="#" onclick="toggleJealous()" id="playPauseBtn">PLAY NOW</p>
+                          <span id="timeDisplay">0:00</span>
+                          <div class="progress-container" id="progressContainer">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        
                         </div>
                     </div>
                     <div class="text">
@@ -155,14 +165,19 @@
                     
 
                   <div class="section">
-                    <div class="love">
+                    <div class="love audio-player">
                         <img src="inki1.jpg" alt="">
-                        <audio class="love-audio">
+                        <audio>
                             <source src="love.m4a" type="audio/mpeg">
                         </audio>
                         <div class="overlay">
                             <h1>love</h1>
-                            <p onclick="toggleLove()">PLAY NOW</p>
+                            <p href="#" onclick="toggleLove()"  id="playPauseBtn">PLAY NOW</p>
+                            <span id="timeDisplay">0:00</span>
+                            <div class="progress-container" id="progressContainer">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="text">
@@ -176,14 +191,19 @@
                   
     
                   <div class="section">
-                    <div class="so-sweet">
+                    <div class="so-sweet audio-player">
                         <img src="IMG-20230317-WA0003.jpg" alt="" style="filter: grayscale(1);">
-                        <audio class="so-sweet-audio">
+                        <audio>
                             <source src="so sweet - inki .m4a" type="audio/mpeg">
                         </audio>    
                         <div class="overlay">
                             <h1>so sweet</h1>
-                            <p onclick="toggleSoSweet()">PLAY NOW</p>
+                            <p href="#" onclick="toggleSoSweet()" id="playPauseBtn">PLAY NOW</p>
+                            <span id="timeDisplay">0:00</span>
+                            <div class="progress-container" id="progressContainer">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            
                         </div>                                
                     </div>
                     <div class="text">
@@ -205,10 +225,10 @@
         
         <footer>
             <div class="socials">
-              <a href="http://www.youtube.com/@inki4real">YOUTUBE</a>
-              <a href="https://www.instagram.com/i.n.ki?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">INSTAGRAM</a>
-              <a href="https://www.tiktok.com/@inki.arr?is_from_webapp=1&sender_device=pc">TIKTOK</a>
-              <a href="https://l.instagram.com/?u=https%3A%2F%2Fon.soundcloud.com%2FwGky3q4dhJtekGAx7%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaYVYXAbmQ5bOUl0N6f3RW-nHShSkQ7LM9KWODdgCZOIlxNb6cxB6gBkHJ0_aem_UG351BzmDVeEmhzgDvOYmQ&e=AT0iDpd4UwkdB5j8Lsq18Vr3iJC2OfRM3JDUS3c5yx1VzuJeruS8hL_HCnTIKrF27YLidijFAmteZtNkxaj8Jw3q6ftMiVUOfT-JjzQ">SOUNDCLOUD</a>
+              <a href="http://www.youtube.com/@inki4real" target="_blank">YOUTUBE</a>
+              <a href="https://www.instagram.com/i.n.ki?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">INSTAGRAM</a>
+              <a href="https://www.tiktok.com/@inki.arr?is_from_webapp=1&sender_device=pc" target="_blank">TIKTOK</a>
+              <a href="https://l.instagram.com/?u=https%3A%2F%2Fon.soundcloud.com%2FwGky3q4dhJtekGAx7%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaYVYXAbmQ5bOUl0N6f3RW-nHShSkQ7LM9KWODdgCZOIlxNb6cxB6gBkHJ0_aem_UG351BzmDVeEmhzgDvOYmQ&e=AT0iDpd4UwkdB5j8Lsq18Vr3iJC2OfRM3JDUS3c5yx1VzuJeruS8hL_HCnTIKrF27YLidijFAmteZtNkxaj8Jw3q6ftMiVUOfT-JjzQ" target="_blank">SOUNDCLOUD</a>
             </div>
             <div  class="logo">
               <a href="#">inki</a>
