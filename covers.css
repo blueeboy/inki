@@ -72,14 +72,14 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 9em 2em 12em 2em;
+    padding: 3em 2em 6em 2em;
     width: 100%;
 }
 
 .container-1-body .text h1 {
-    font-family: "Playfair Display", serif;
-    font-weight: 900;
-    font-size: 50px;
+    font-family: "Rubik puddles", serif;
+    font-weight: 100;
+    font-size: 70px;
     color: var(--primary-color);
     margin: 0 auto;
     padding: 1em 0;
@@ -328,10 +328,21 @@ footer .logo a{
     grid-template-columns: 80% 20%;
 }
 
-nav a#menu-btn {
-  font-size: 25px;
-  padding: 0.5em 0;
+nav a.logo{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Rubik Glitch", serif;
+  font-size: 30px;
+  font-weight: 100;
+  padding-left: 0.5em;
 }
+
+
+nav a#menu-btn {
+  font-size: 20px;
+  padding: 0.45em 0;
+}
+
 
 .video {
   display: grid;
@@ -342,7 +353,7 @@ nav a#menu-btn {
 }
   
    footer {
-    height: 40vh;
+    height: 30vh;
   }
   
   footer .socials {
@@ -359,19 +370,18 @@ nav a#menu-btn {
   
   
   .menu-links a {
-  font-size: 50px;
-  text-align: start;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 1em;
-}
-
-.menu-links .first,
-.menu-links .second {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-  
+    font-size: 70px;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0.2em;
+    height: 17vh;
+  }
+  .menu-links .first,
+  .menu-links .second {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .menu-socials {
     gap: 1em;
   }
