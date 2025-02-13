@@ -1,57 +1,46 @@
+const tellMe = document.querySelector(".tell-me")
+const tellMeAudio = document.querySelector(".tell-me-audio")
 const jealous = document.querySelector(".jealous")
 const jealousAudio = document.querySelector(".jealous-audio")
 const love = document.querySelector(".love")
 const loveAudio = document.querySelector(".love-audio")
 const soSweet = document.querySelector(".so-sweet")
 const soSweetAudio = document.querySelector(".so-sweet-audio")
+// const tellMeplayPauseBtn = document.getElementById('tell-me-playPauseBtn');
+// const jealousplayPauseBtn = document.getElementById('jealous-playPauseBtn');
+// const loveplayPauseBtn = document.getElementById('love-playPauseBtn');
+// const soSweetplayPauseBtn = document.getElementById('so-sweet-playPauseBtn');
 
-
-
-// jealous.addEventListener("mouseover", () => {
-//     jealousAudio.setAttribute("controls", "controls")
-// })
-// jealous.addEventListener("mouseleave", () => {
-//     jealousAudio.removeAttribute("controls")
-// })
-
-// love.addEventListener("mouseover", () => {
-//     loveAudio.setAttribute("controls", "controls")
-// })
-
-// love.addEventListener("mouseleave", () => {
-//     loveAudio.removeAttribute("controls")
-// })
-// soSweet.addEventListener("mouseover", () => {
-//     soSweetAudio.setAttribute("controls", "controls")
-// })
-// soSweet.addEventListener("mouseleave", () => {
-//     soSweetAudio.removeAttribute("controls")
-// })
 
 
 function toggleTellMe() {
-    if (jealousAudio.paused) {
+    if (tellMeAudio.paused) {
         loveAudio.pause();
         soSweetAudio.pause();
-        jealousAudio.play();
-    } else {
         jealousAudio.pause();
+        tellMeAudio.play()
+    } else {
+        tellMeAudio.pause();
     }
 }
+
 function toggleJealous() {
     if (jealousAudio.paused) {
         loveAudio.pause();
         soSweetAudio.pause();
+        tellMeAudio.pause();
         jealousAudio.play();
     } else {
         jealousAudio.pause();
     }
 }
+
 function toggleLove() {
     if (loveAudio.paused) {
         jealousAudio.pause();
         soSweetAudio.pause();
-        loveAudio.play();
+        tellMeAudio.pause();
+        loveAudio.play();      
     } else {
         loveAudio.pause();
     }
@@ -60,11 +49,69 @@ function toggleSoSweet() {
     if (soSweetAudio.paused) {
         jealousAudio.pause();
         loveAudio.pause();
+        tellMeAudio.pause();
         soSweetAudio.play();
     } else {
         soSweetAudio.pause();
     }
 }
+
+
+
+const progressBar = document.getElementById('progressBar');
+const progressContainer = document.getElementById('progressContainer');
+const timeDisplay = document.getElementById('timeDisplay');
+
+
+    document.querySelectorAll('.audio-player').forEach(player => {
+    const audio = player.querySelector('audio');
+    const playPauseBtn = player.querySelector('#playPauseBtn');
+    const progressBar = player.querySelector('.progress-bar');
+    const progressContainer = player.querySelector('.progress-container');
+    const timeDisplay = player.querySelector('#timeDisplay');
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            // Pause all other audios before playing this one
+            document.querySelectorAll('audio').forEach(a => a.pause());
+            document.querySelectorAll('#playPauseBtn').forEach(btn => btn.textContent = 'Play Now');
+
+            audio.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = 'Play Now';
+        }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        // Update time display
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    });
+
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+        audio.currentTime = (clickX / width) * duration;
+    });
+
+    audio.addEventListener('ended', () => {
+        playPauseBtn.textContent = 'Play Now';
+        progressBar.style.width = '0%';
+    });
+
+});
+
+
+
+
+
 
 
 const menuBtn = document.querySelector("#menu-btn")
