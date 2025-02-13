@@ -74,15 +74,15 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 9em 2em 12em 2em;
+    padding: 3em 2em 12em 2em;
     width: 100%;
     
 }
 
 .container-1-body .text h1 {
-    font-family: "Playfair Display", serif;
-    font-weight: 900;
-    font-size: 50px;
+    font-family: "Rubik puddles", serif;
+    font-weight: 100;
+    font-size: 70px;
     color: var(--primary-color);
     margin: 0 auto;
     padding: 1em 0;
@@ -105,35 +105,31 @@ nav a:hover {
 .audio {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
    column-gap: 1em;
-   row-gap: 6em;
+   row-gap: 2em;
    margin: 3em 0;
 }
-
-/* .audio > div img{
-    width: 100%;
-    aspect-ratio: 1;
-    gap: 10em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-    cursor: pointer;
-    object-fit: cover;
-    z-index: 1;
-} */
 
 .jealous, .love, .so-sweet , .my-fault, .miss-u, .wyss, .tell-me{
     position: relative;
     width: 100%;
-    height: 100%;
     overflow: hidden;
     object-fit: cover;
   }
 
-  .audio > div img{
+  .audio .non-sect img{
     width: 100%;
     height: 100%;
+    aspect-ratio: 1 / 1.4;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease-in-out;
+  }
+  .audio .section img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1.4;
     object-fit: cover;
     display: block;
     transition: 0.5s ease-in-out;
@@ -159,15 +155,31 @@ nav a:hover {
     font-family: "Playfair Display", serif;
   }
 
-  .overlay {
+  .non-sect .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    aspect-ratio: 1 / 1.4;
     background: var(--tertiary-color); /* Orange background */
     display: grid;
     grid-template-rows: 80% 20%;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1.4;
+    background: var(--tertiary-color); /* Orange background */
+    display: grid;
+    grid-template-rows: 80% 15%  3% 2%;
     align-items: flex-start;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -182,25 +194,16 @@ nav a:hover {
     color: var(--secondary-color);
   }
 
-  .overlay p {
-    color: var(--secondary-color);
-    font-size: 20px;
-    border-top: 1px solid var(--primary-color);
-    width: 100%;
-    padding: 2.5em 0;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-  }
-  .overlay a {
+  .overlay a, .overlay p {
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 20px;
     border-top: 1px solid var(--primary-color);
     width: 100%;
-    padding: 2.5em 0;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 
@@ -210,6 +213,27 @@ nav a:hover {
   .overlay a:hover {
     background-color: var(--primary-color);
   }
+
+  .progress-container {
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+  .progress-bar {
+    height: 50%;
+    width: 0%;
+    background: #007bff;
+    transition: width 0.1s;
+}
+
+#timeDisplay {
+  font-size: 17px;
+  padding-left: 0.5em;
+  text-align: left;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
 
   /* Hover Effect */
   .my-fault:hover .overlay {
@@ -234,13 +258,33 @@ nav a:hover {
     opacity: 1;
   }
 
+.audio .miss-u {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+}
+.audio .my-fault {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+}
+.audio .wyss {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+}
 .audio .tell-me {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
     width: 100%;
-    
 }
 .audio .jealous {
     display: flex;
@@ -248,7 +292,6 @@ nav a:hover {
     align-items: flex-start;
     justify-content: flex-end;
     width: 100%;
-    
 }
 
 .audio .love {
@@ -465,29 +508,52 @@ nav a:hover {
 
 @media (max-width: 640px) {
 
-  nav {
+nav {
     grid-template-columns: 80% 20%;
 }
 
+nav a.logo{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Rubik Glitch", serif;
+  font-size: 30px;
+  font-weight: 100;
+  padding-left: 0.5em;
+}
+
+
 nav a#menu-btn {
-  font-size: 25px;
-  padding: 0.5em 0;
+  font-size: 20px;
+  padding: 0.45em 0;
 }
 
   .audio {
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 1em;
-    row-gap: 6em;
+    gap: 1em;
     margin: 3em 0;
  }
+
+ .audio .non-sect img{
+  aspect-ratio: 1 / 1.2;
+}
+.audio .section img{
+  aspect-ratio: 1 / 1.2;
+}
+
+ .overlay {
+  aspect-ratio: 1 / 1.2;
+}
+.section .overlay {
+  grid-template-rows: 75% 18%  5% 2%;
+}
 
  body {
   overflow-x: hidden;
  }
 
  footer {
-  height: 40vh;
+  height: 30vh;
 }
 
 footer .socials {
@@ -504,13 +570,13 @@ footer .logo a{
 
 
 .menu-links a {
-  font-size: 50px;
+  font-size: 70px;
   text-align: start;
   display: flex;
   justify-content: flex-start;
-  padding-left: 1em;
+  padding-left: 0.2em;
+  height: 17vh;
 }
-
 .menu-links .first,
 .menu-links .second {
   display: grid;
@@ -523,6 +589,13 @@ footer .logo a{
 
 .menu-socials a {
   font-size: 1em;
+}
+
+.section {
+  height: 70vh;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 }
