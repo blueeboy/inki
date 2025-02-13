@@ -7,6 +7,7 @@
 body {
     font-family: "Inconsolata", serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 :root {
@@ -204,9 +205,11 @@ nav a:hover {
   }
 
 
-  .container-3 > div{
+  .container-3 .first,
+  .container-3 .second,
+  .container-3 .video {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     column-gap: 2em;
     align-items: center;
     justify-content: space-between;
@@ -436,9 +439,14 @@ nav a:hover {
 
 @media (max-width: 1024px) {
 
+  body {
+    font-family: "Inconsolata", serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
   nav {
     grid-template-columns: 85% 15%;
-    color: red;
 }
 
   nav a#menu-btn {
@@ -466,13 +474,17 @@ nav a:hover {
   }
 
 
-  .container-3 > div{
+  .container-3 .first,
+  .container-3 .second,
+  .container-3 .video {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+    gap: 0em;
     align-items: center;
     justify-content: space-between;
-    gap: 22em;
+    padding: 0 3em;
   }
+
 
   .container-3 p{
     color: var(--primary-color);
@@ -510,17 +522,33 @@ nav a:hover {
 
 
 @media (max-width: 640px) {
+
+  body {
+    font-family: "Inconsolata", serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
   nav {
     grid-template-columns: 80% 20%;
 }
 
+nav a.logo{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: "Rubik Glitch", serif;
+  font-size: 30px;
+  font-weight: 100;
+  padding-left: 0.5em;
+}
+
+
 nav a#menu-btn {
-  font-size: 25px;
-  padding: 0.5em 0;
+  font-size: 20px;
+  padding: 0.45em 0;
 }
 
 .carousel-content h1 {
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .container-2 p {
@@ -528,23 +556,32 @@ nav a#menu-btn {
 }
 
 .container-2 h1 {
-  font-size: 6em;
+  font-size: 4em;
 }
 
 .container-3 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  gap: 1em;
+  gap: 6em;
 }
 
 
-.container-3 > div{
+.container-3 .first,
+.container-3 .second,
+.container-3 .video {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
+  gap: 2em;
   align-items: center;
   justify-content: space-between;
-  gap: 3em;
+  padding: 0 3em;
+}
+
+.container-3 .second {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2em;
 }
 
 .container-3 p{
@@ -557,12 +594,14 @@ nav a#menu-btn {
 
 .container-3 img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
 .container-3 video {
   width: 100%;
+  height: 100%;
   aspect-ratio: 16 / 9;
 }
 
@@ -570,47 +609,32 @@ nav a#menu-btn {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
   padding: 0em 1em 0em 1em;
   overflow: hidden;
+  margin-top: -18em;
+  margin-bottom: -15em;
 }
 
 .container-4 > div h1 {
-  font-size: 16px;
+  font-size: 20px;
+  text-align: center;
 }
 
 footer {
-  height: 40vh;
-  background-color: var(--secondary-color);
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid var(--primary-color);
-  
+  height: 30vh;
 }
 
 footer .socials {
-  display: flex;
   gap: 1em;
 }
 
 footer .socials a {
   font-size: 1em;
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-footer .socials a:hover {
-  border-bottom: 2px solid var(--primary-color);
 }
 
 footer .logo a{
-  text-decoration: none;
-  color: var(--primary-color);
-  font-family: "Rubik Glitch", serif;
   font-size: 60px;
-  font-weight: 100;
 }
 
 .section {
@@ -624,13 +648,19 @@ footer .logo a{
   opacity: 1;
   transform: translateY(0);
 }
-    
+
+body {
+  overflow-x: hidden;
+}
+
+
 .menu-links a {
-  font-size: 50px;
+  font-size: 70px;
   text-align: start;
   display: flex;
   justify-content: flex-start;
-  padding-left: 1em;
+  padding-left: 0.2em;
+  height: 17vh;
 }
 
 .menu-links .first,
@@ -645,5 +675,13 @@ footer .logo a{
 
 .menu-socials a {
   font-size: 1em;
+}
+
+.show {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
 }
 } 
