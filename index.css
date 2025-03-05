@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inconsolata", serif;
     scroll-behavior: smooth;
@@ -200,14 +204,14 @@ nav a:hover {
   .container-3 {
     display: flex;
     flex-direction: column;
+    gap: 3em;
     padding-top: 6em;
     overflow: hidden;
   }
 
 
   .container-3 .first,
-  .container-3 .second,
-  .container-3 .video {
+  .container-3 .second{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2em;
@@ -228,11 +232,7 @@ nav a:hover {
     width: 90%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-  }
-
-  .container-3 video {
-    width: 90%;
-    aspect-ratio: 16 / 9;
+    margin: 2em 0;
   }
 
   .container-4 {
@@ -470,16 +470,15 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: 6em;
+    gap: 3em;
   }
 
 
   .container-3 .first,
-  .container-3 .second,
-  .container-3 .video {
+  .container-3 .second{
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0em;
+    grid-template-columns: 1fr 1fr ;
+    row-gap: 2em;
     align-items: center;
     justify-content: space-between;
     padding: 0 3em;
@@ -488,7 +487,7 @@ nav a:hover {
 
   .container-3 p{
     color: var(--primary-color);
-    line-height: 2;
+    line-height: 1.5;
     text-align: left;
     width: 100%;
     font-size: 1.2em;
@@ -498,6 +497,7 @@ nav a:hover {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    margin: 3em 0;
   }
 
   .container-3 video {
@@ -563,19 +563,19 @@ nav a#menu-btn {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  gap: 6em;
+  gap: 28em;
+  margin: 3em 0;
 }
 
 
 .container-3 .first,
-.container-3 .second,
-.container-3 .video {
+.container-3 .second{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2em;
+  row-gap: 3em;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3em;
+  padding: 0 1em;
 }
 
 .container-3 .second {
@@ -597,6 +597,7 @@ nav a#menu-btn {
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  margin: 3em 0;
 }
 
 .container-3 video {
